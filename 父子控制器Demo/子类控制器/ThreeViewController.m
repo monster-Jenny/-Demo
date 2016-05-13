@@ -19,6 +19,14 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+/**
+ * 屏幕即将旋转到某个方向时会调用这个方法
+ */
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    NSLog(@"%@ willRotateToInterfaceOrientation", self.class);
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

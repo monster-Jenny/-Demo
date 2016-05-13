@@ -52,7 +52,9 @@
 
 /**
  如果OneTableViewController等不是viewController的子控制器，那么导航是传递不到OneTableViewController的；
- 验证看touchesBegan:
+ 验证看touchesBegan：
+ 
+ 同样适用于model窗口的弹出和消失；（即如果不具备父子关系，子控制器就不能控制父控制器里面的操作）
  
  */
 

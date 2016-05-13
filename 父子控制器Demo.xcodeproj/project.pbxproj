@@ -20,6 +20,8 @@
 		8D1460491CE4860600097847 /* TwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D1460471CE4860600097847 /* TwoViewController.xib */; };
 		8D14604D1CE4861600097847 /* ThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D14604B1CE4861600097847 /* ThreeViewController.m */; };
 		8D14604E1CE4861600097847 /* ThreeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D14604C1CE4861600097847 /* ThreeViewController.xib */; };
+		8DEA3C811CE581CB00647D6A /* TempViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEA3C7F1CE581CB00647D6A /* TempViewController.m */; };
+		8DEA3C821CE581CB00647D6A /* TempViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DEA3C801CE581CB00647D6A /* TempViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,9 @@
 		8D14604A1CE4861600097847 /* ThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThreeViewController.h; path = "子类控制器/ThreeViewController.h"; sourceTree = "<group>"; };
 		8D14604B1CE4861600097847 /* ThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThreeViewController.m; path = "子类控制器/ThreeViewController.m"; sourceTree = "<group>"; };
 		8D14604C1CE4861600097847 /* ThreeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ThreeViewController.xib; path = "子类控制器/ThreeViewController.xib"; sourceTree = "<group>"; };
+		8DEA3C7E1CE581CB00647D6A /* TempViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TempViewController.h; path = "跳转控制器/TempViewController.h"; sourceTree = "<group>"; };
+		8DEA3C7F1CE581CB00647D6A /* TempViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TempViewController.m; path = "跳转控制器/TempViewController.m"; sourceTree = "<group>"; };
+		8DEA3C801CE581CB00647D6A /* TempViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TempViewController.xib; path = "跳转控制器/TempViewController.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +132,9 @@
 				8D14604A1CE4861600097847 /* ThreeViewController.h */,
 				8D14604B1CE4861600097847 /* ThreeViewController.m */,
 				8D14604C1CE4861600097847 /* ThreeViewController.xib */,
+				8DEA3C7E1CE581CB00647D6A /* TempViewController.h */,
+				8DEA3C7F1CE581CB00647D6A /* TempViewController.m */,
+				8DEA3C801CE581CB00647D6A /* TempViewController.xib */,
 				8D14601B1CE470FA00097847 /* Assets.xcassets */,
 				8D14601D1CE470FA00097847 /* LaunchScreen.storyboard */,
 				8D1460201CE470FA00097847 /* Info.plist */,
@@ -264,6 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DEA3C821CE581CB00647D6A /* TempViewController.xib in Resources */,
 				8D14601F1CE470FA00097847 /* LaunchScreen.storyboard in Resources */,
 				8D14601C1CE470FA00097847 /* Assets.xcassets in Resources */,
 				8D14601A1CE470FA00097847 /* Main.storyboard in Resources */,
@@ -298,6 +307,7 @@
 				8D1460141CE470FA00097847 /* AppDelegate.m in Sources */,
 				8D14604D1CE4861600097847 /* ThreeViewController.m in Sources */,
 				8D1460481CE4860600097847 /* TwoViewController.m in Sources */,
+				8DEA3C811CE581CB00647D6A /* TempViewController.m in Sources */,
 				8D1460111CE470FA00097847 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -524,6 +534,7 @@
 				8D14603B1CE470FA00097847 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8D14603C1CE470FA00097847 /* Build configuration list for PBXNativeTarget "父子控制器DemoTests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +543,7 @@
 				8D14603E1CE470FA00097847 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8D14603F1CE470FA00097847 /* Build configuration list for PBXNativeTarget "父子控制器DemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -540,6 +552,7 @@
 				8D1460411CE470FA00097847 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,6 +7,7 @@
 //
 
 #import "TwoViewController.h"
+#import "TempViewController.h"
 
 @interface TwoViewController ()
 
@@ -20,6 +21,7 @@
 }
 - (IBAction)click:(UIButton *)sender {
     NSLog(@"点击了");
+    
 }
 
 /**
@@ -28,6 +30,12 @@
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
     NSLog(@"%@ willRotateToInterfaceOrientation", self.class);
+}
+
+//如果TwoViewController不是ViewController的子控制器，那么就没法跳转到TempViewController，因为TwoViewController获取不到导航控制器
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    TempViewController *temp = [[TempViewController alloc] init];
+    [self.navigationController pushViewController:temp animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

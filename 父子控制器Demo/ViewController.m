@@ -127,6 +127,19 @@
 
 
 
+
+/**
+ * 当前控制器已经被添加到某个父控制器上时就会调用这个方法
+ */
+
+
+- (void)didMoveToParentViewController:(UIViewController *)parent
+{
+    [super didMoveToParentViewController:parent];
+    
+    NSLog(@"didMoveToParentViewController - %@", parent);
+}
+
 /**
  * 屏幕即将旋转到某个方向时会调用这个方法
  */

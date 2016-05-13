@@ -17,6 +17,9 @@
 /** 正在显示的控制器 */
 @property (nonatomic, weak) UIViewController *showingVc;
 
+/** 用来存放子控制器的view */
+@property (nonatomic, weak) UIView *contentView;
+
 @end
 
 @implementation ViewController
@@ -24,13 +27,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    // 通过addChildViewController添加的控制器都会存在于childViewControllers数组中
+    UIView *contentView = [[UIView alloc] init];
+    contentView.frame = CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64);
+    [self.view addSubview:contentView];
+    self.contentView = contentView;
+    
     [self addChildViewController:[[OneTableViewController alloc] init]];
+    //    [self.childViewControllers[0] didMoveToParentViewController:self];
+    
     [self addChildViewController:[[TwoViewController alloc] init]];
     [self addChildViewController:[[ThreeViewController alloc] init]];
-
-    // 将XMGOneViewController从childViewControllers数组中移除
-    // [self.childViewControllers[0] removeFromParentViewController];
+    
+    // 当一个控制器从父控制器中移除时。会自动调用控制器的didMoveToParentViewController:方法，并且参数是nil
+    //    [self.childViewControllers[0] removeFromParentViewController];
 }
 
 
@@ -58,11 +67,20 @@
     // 获得控制器的位置（索引）
     NSUInteger index = [sender.superview.subviews indexOfObject:sender];
     
+    // 当前控制器的索引
+    NSUInteger oldIndex = [self.childViewControllers indexOfObject:self.showingVc];
+    
     // 添加控制器的view
     self.showingVc = self.childViewControllers[index];
-    self.showingVc.view.frame = CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64);
-    [self.view addSubview:self.showingVc.view];
+    self.showingVc.view.frame = self.contentView.bounds;
+    [self.contentView addSubview:self.showingVc.view];
     
+    // 动画
+    CATransition *animation = [CATransition animation];
+    animation.type = @"cube";
+    animation.subtype = index > oldIndex ? kCATransitionFromRight : kCATransitionFromLeft;
+    animation.duration = 0.5;
+    [self.contentView.layer addAnimation:animation forKey:nil];
 }
 
 /**

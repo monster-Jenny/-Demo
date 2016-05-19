@@ -40,7 +40,24 @@
     
     // 当一个控制器从父控制器中移除时。会自动调用控制器的didMoveToParentViewController:方法，并且参数是nil
     //    [self.childViewControllers[0] removeFromParentViewController];
+    
+    [self initSwipGesture];
+    self.showingVc = self.childViewControllers[0];
+    self.showingVc.view.frame = self.contentView.bounds;
+    [self.contentView addSubview:self.showingVc.view];
 }
+
+- (void)initSwipGesture
+{
+    UISwipeGestureRecognizer *swipRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipRight:)];
+    swipRight.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.view addGestureRecognizer:swipRight];
+    
+    UISwipeGestureRecognizer *swipLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipLeft:)];
+    swipLeft.direction = UISwipeGestureRecognizerDirectionLeft;
+    [self.view addGestureRecognizer:swipLeft];
+}
+
 
 
 - (IBAction)buttonClick:(UIButton *)sender {
@@ -64,10 +81,10 @@
     // 移除其他控制器的view
     [self.showingVc.view removeFromSuperview];
     
-    // 获得控制器的位置（索引）
+    // 获得控制器的位置（索引）（将要到来的那一页）
     NSUInteger index = [sender.superview.subviews indexOfObject:sender];
     
-    // 当前控制器的索引
+    // 当前控制器的索引(要翻走的那一页)
     NSUInteger oldIndex = [self.childViewControllers indexOfObject:self.showingVc];
     
     // 添加控制器的view
@@ -82,6 +99,55 @@
     animation.duration = 0.5;
     [self.contentView.layer addAnimation:animation forKey:nil];
 }
+
+
+- (void)swipRight:(UISwipeGestureRecognizer *)gesture
+{
+    NSUInteger oldIndex = [self.childViewControllers indexOfObject:self.showingVc];
+    //向左滑，将要到来的控制器的索引小于当前的控制器的索引
+    
+    if (oldIndex <= 0) {
+        return;
+    }
+    
+    // 移除其他控制器的view
+    [self.showingVc.view removeFromSuperview];
+    // 添加控制器的view
+    self.showingVc = self.childViewControllers[oldIndex-1];
+    self.showingVc.view.frame = self.contentView.bounds;
+    [self.contentView addSubview:self.showingVc.view];
+    
+    // 动画
+    CATransition *animation = [CATransition animation];
+    animation.type = @"cube";
+    animation.subtype = kCATransitionFromLeft;
+    animation.duration = 0.5;
+    [self.contentView.layer addAnimation:animation forKey:nil];
+}
+
+- (void)swipLeft:(UISwipeGestureRecognizer *)gesture
+{
+    NSUInteger oldIndex = [self.childViewControllers indexOfObject:self.showingVc];
+    //向右滑，将要到来的控制器的索引大于当前的控制器的索引
+    
+    if (oldIndex + 1>=self.childViewControllers.count) {
+        return;
+    }
+    // 移除其他控制器的view
+    [self.showingVc.view removeFromSuperview];
+    // 添加控制器的view
+    self.showingVc = self.childViewControllers[oldIndex+1];
+    self.showingVc.view.frame = self.contentView.bounds;
+    [self.contentView addSubview:self.showingVc.view];
+    
+    // 动画
+    CATransition *animation = [CATransition animation];
+    animation.type = @"cube";
+    animation.subtype = kCATransitionFromRight;
+    animation.duration = 0.5;
+    [self.contentView.layer addAnimation:animation forKey:nil];
+}
+
 
 /**
  * 二、想要解决一中出现的两个问题，会考虑将控制器声明成全局变量，只往view上加一次

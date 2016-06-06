@@ -10,6 +10,8 @@
 #import "OneTableViewController.h"
 #import "TwoViewController.h"
 #import "ThreeViewController.h"
+#import "TwoTableViewController.h"
+
 
 
 @interface ViewController ()
@@ -26,9 +28,16 @@
     // Do any additional setup after loading the view, typically from a nib.
     // 通过addChildViewController添加的控制器都会存在于childViewControllers数组中
     [self addChildViewController:[[OneTableViewController alloc] init]];
-    [self addChildViewController:[[TwoViewController alloc] init]];
+//    [self addChildViewController:[[TwoViewController alloc] init]];
+    [self addChildViewController:[[TwoTableViewController alloc] init]];
     [self addChildViewController:[[ThreeViewController alloc] init]];
 
+
+    //如果想要子控制器里面的tableView的scrollToTop属性可用，必须将父控制器的scrollView的scrollToTop属性设置为NO；
+    UIScrollView * scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 64, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height)];
+    scrollView.backgroundColor = [UIColor orangeColor];
+    scrollView.scrollsToTop = NO ;
+    [self.view addSubview:scrollView];
     // 将XMGOneViewController从childViewControllers数组中移除
     // [self.childViewControllers[0] removeFromParentViewController];
 }

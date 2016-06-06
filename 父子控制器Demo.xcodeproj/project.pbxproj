@@ -20,6 +20,7 @@
 		8D1460491CE4860600097847 /* TwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D1460471CE4860600097847 /* TwoViewController.xib */; };
 		8D14604D1CE4861600097847 /* ThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D14604B1CE4861600097847 /* ThreeViewController.m */; };
 		8D14604E1CE4861600097847 /* ThreeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D14604C1CE4861600097847 /* ThreeViewController.xib */; };
+		8D85FBED1D050E60004AA056 /* TwoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D85FBEC1D050E60004AA056 /* TwoTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,8 @@
 		8D14604A1CE4861600097847 /* ThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThreeViewController.h; path = "子类控制器/ThreeViewController.h"; sourceTree = "<group>"; };
 		8D14604B1CE4861600097847 /* ThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThreeViewController.m; path = "子类控制器/ThreeViewController.m"; sourceTree = "<group>"; };
 		8D14604C1CE4861600097847 /* ThreeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ThreeViewController.xib; path = "子类控制器/ThreeViewController.xib"; sourceTree = "<group>"; };
+		8D85FBEB1D050E60004AA056 /* TwoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoTableViewController.h; sourceTree = "<group>"; };
+		8D85FBEC1D050E60004AA056 /* TwoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,8 @@
 				8D1460181CE470FA00097847 /* Main.storyboard */,
 				8D1460421CE485E600097847 /* OneTableViewController.h */,
 				8D1460431CE485E600097847 /* OneTableViewController.m */,
+				8D85FBEB1D050E60004AA056 /* TwoTableViewController.h */,
+				8D85FBEC1D050E60004AA056 /* TwoTableViewController.m */,
 				8D1460451CE4860600097847 /* TwoViewController.h */,
 				8D1460461CE4860600097847 /* TwoViewController.m */,
 				8D1460471CE4860600097847 /* TwoViewController.xib */,
@@ -293,6 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D85FBED1D050E60004AA056 /* TwoTableViewController.m in Sources */,
 				8D1460441CE485E600097847 /* OneTableViewController.m in Sources */,
 				8D1460171CE470FA00097847 /* ViewController.m in Sources */,
 				8D1460141CE470FA00097847 /* AppDelegate.m in Sources */,
@@ -524,6 +530,7 @@
 				8D14603B1CE470FA00097847 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8D14603C1CE470FA00097847 /* Build configuration list for PBXNativeTarget "父子控制器DemoTests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +539,7 @@
 				8D14603E1CE470FA00097847 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8D14603F1CE470FA00097847 /* Build configuration list for PBXNativeTarget "父子控制器DemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -540,6 +548,7 @@
 				8D1460411CE470FA00097847 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
